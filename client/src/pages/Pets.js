@@ -53,9 +53,10 @@ export default function Pets () {
 
   const onSubmit = input => {
     setModal(false)
+    console.log("input", input);
     createPet({
       variables: {input},
-    
+
       optimisticResponse: {
         __typename: 'Mutation',
         addPet: {
@@ -77,7 +78,7 @@ export default function Pets () {
       </div>
     </div>
   ))
-  
+
   if (modal) {
     return (
       <div className="row center-xs">
